@@ -26,12 +26,12 @@ print("----Start of Result----")
 #print("----End of Result----")
 
 combinedInput = f"""Based on the following documents, please answer this question: {query}
-
 Documents:
 {chr(10).join([f"- {doc.page_content}" for doc in relevantDocs])}
 
 Please provide a clear, helpful answer using only the information from these documents. If you can't find the answer in the documents, say "I don't have enough information to answer that question based on the provided documents."
 """
+
 model = ChatOpenAI(model='gpt-4o')
 messages = [
     SystemMessage(content='You are a helpful assistance'),
